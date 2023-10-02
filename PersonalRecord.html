@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+    <head>
+        <meta charset="utf-8">
+        <title>個人紀錄</title>
+        <!-- <link rel="icon" type="image/png" href="images/favicon.png"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <link href="css/PersonalRecordStyle.css" rel="stylesheet">
+    </head>
+
+    <body>
+		<div class="background-circle"></div>
+		<button type="button"><i class="arrow left-arrow" id="left-arrow"></i></button>
+		<div class="bookshelf-wrapper">
+		  <div class="name">
+			<h1>個人紀錄</h1>
+		  </div>
+		  <div class="bookshelf">
+			<div class="shelf">
+			  <div class="camera">
+				<div class="flash"></div>
+				<div class="trigger"></div>
+			  </div>
+			  <div class="shelf-flex">
+			  </div>
+			</div>
+			<div class="shelf">
+			  <div class="shelf-flex">
+			  </div>
+			</div>
+			<div class="shelf">
+			  <div class="shelf-flex">
+			  </div>
+			</div>
+			<div class="shelf">
+			  <div class="shelf-flex">
+				<div class="door left"></div>
+				<div class="door right"></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<button type="button"><i class="arrow right-arrow" id="right-arrow"></i></button>
+		<div class="overlay" id="overlay">
+		  <h2 id="name"></h2>
+		  <img src="" alt="放大的圖片" id="overlay-image">
+		  <span class="close-button" id="close-button">&times;</span>
+		</div> 
+    </body>
+	
+	<script type="module" src="script/PersonalRecordJS.js"></script>
+</html>
