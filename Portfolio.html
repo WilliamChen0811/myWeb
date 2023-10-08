@@ -1,17 +1,813 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
-    <head>
-        <meta charset="utf-8">
-        <title>作品集</title>
-        <!-- <link rel="icon" type="image/png" href="images/favicon.png"> -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
+	<head>
+		<meta charset="UTF-8">
+		<title>作品集</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
     <!-- CSS -->
-        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-        <!-- <link href="css/style.css" rel="stylesheet"> -->
-    </head>
+		<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+		<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+		<link rel="stylesheet" href="css/PortfolioStyle.css">
+	</head>
+	
+	<body>
+	<!-- partial:index.partial.html -->
+		<div id="window" class="window">
+			<div class="icon-computer text-center" id="icon-computer" ondblclick="opencom()">
+				<img src="https://mohamedelghandour.github.io/windows-10/img/thumb_14339670430This_PC.png" class="img-responsive">
+				<p>我的電腦</p>
+			</div>
+			<div class="overlay-computer" id="overlay-computer">
+				<div class="fluid-container">
+					<div class="first-row-win" id="first-row-win">
+						<div class="left">
+							<i class="fa fa-hdd-o"></i>
+							<i class="fa fa-file-o"></i>
+							<i class="fa fa-folder"></i>
+							<span>我的作品集</span>
+						</div>
+						<div class="right">
+							<i class="fa fa-window-minimize" onclick="closeopencom()"></i>
+							<i class="fa fa-window-restore" onclick="returncom()" id="returncam" style="display:none;"></i>
+							<i class="fa fa-window-maximize" onclick="upercom()" id="upercam"></i>
+							<i class="fa fa-times" onclick="closecom()"></i>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="second-row-win">
+						<div>
+							<!-- Nav tabs -->
+							<ul class="nav nav-tabs" role="tablist">
+								<li role="presentation" class="active"><a class="home-a" href="#home" aria-controls="home" role="tab" data-toggle="tab">File</a></li>
+								<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Home</a></li>
+								<li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Share</a></li>
+								<li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">View</a></li>
+							</ul>
+							<!-- Tab panes -->
+							<div class="tab-content">
+								<div role="tabpanel" class="tab-pane active" id="home">
+									<div class="col-xs-1 text-center">
+										<i class="fa fa-envelope-open fa-2x"></i>
+										<p>Mail</p>
+									</div>
+									<div class="col-xs-1 text-center">
+										<i class="fa fa-file-code-o  fa-2x"></i>
+										<p>Code</p>
+									</div>
+									<div class="col-xs-1 text-center">
+										<i class="fa fa-sticky-note-o fa-2x"></i>
+										<p>Note</p>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div role="tabpanel" class="tab-pane" id="profile">
+									<div class="col-xs-1 text-center">
+										<i class="fa fa-user-circle fa-2x"></i>
+										<p>User</p>
+									</div>
+									<div class="col-xs-1 text-center">
+										<i class="fa fa-battery-4  fa-2x"></i>
+										<p>battery</p>
+									</div>
+									<div class="col-xs-1 text-center">
+										<i class="fa fa-book fa-2x"></i>
+										<p>Book</p>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div role="tabpanel" class="tab-pane" id="messages">
+									<div class="col-xs-1 text-center">
+										<i class="fa fa-car fa-2x"></i>
+										<p>Car</p>
+									</div>
+									<div class="col-xs-1 text-center">
+										<i class="fa fa-camera-retro  fa-2x"></i>
+										<p>cam</p>
+									</div>
+									<div class="col-xs-1 text-center">
+										<i class="fa fa-building fa-2x"></i>
+										<p>build</p>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div role="tabpanel" class="tab-pane" id="settings">
+									<div class="col-xs-1 text-center">
+										<i class="fa fa-cubes fa-2x"></i>
+										<p>cubes</p>
+									</div>
+									<div class="col-xs-1 text-center">
+										<i class="fa fa-coffee fa-2x"></i>
+										<p>coffee</p>
+									</div>
+									<div class="col-xs-1 text-center">
+										<i class="fa fa-film fa-2x"></i>
+										<p>film</p>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="third-row-win">
+						<div class="col-xs-2">
+							<i class="fa fa-long-arrow-left"></i>
+							<i class="fa fa-long-arrow-right"></i>
+							<i class="fa fa-chevron-down"></i>
+							<i class="fa fa-arrow-up"></i>
+						</div>
+						<div class="col-xs-7">
+							<div class="path-input">
+								<span class="path-icon-input">我的電腦</span>
+								<span class="path-icon-input">William Chen (C:)</span>
+								<span class="path-icon-input">我的作品集</span>
+							</div>
+							<i class="fa fa-hdd-o path-icon"></i>
+							<i class="fa fa-repeat path-icon-1"></i>
+							<i class="path-icon-2">|</i>
+						</div>
+						<div class="col-xs-3">
+							<input class="search-input" type="text" placeholder="Search">
+							<i class="fa fa-search path-icon-1"></i>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="fourd-row-win">
+						<div class="col-xs-3" style="border-right: 1px solid #808080;">
+							<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+								<div class="panel panel-default">
+									<div class="panel-heading" role="tab" id="headingOne">
+										<h4 class="panel-title">
+											<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+												<span class="fa fa-star">Quick access</span>
+											</a>
+										</h4>
+									</div>
+									<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+										<div class="panel-body">
+											<p><span class="fa fa-desktop">Desktop</span></p>
+											<p><span class="fa fa-download">Downloads</span></p>
+											<p><span class="fa fa-file-text">documents</span></p>
+											<p><span class="fa fa-picture-o ">Picture</span></p>
+											<p><span class="fa fa-folder ">Folder</span></p>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading" role="tab" id="headingTwo">
+										<h4 class="panel-title">
+											<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+												<span class="fa fa-folder-open">Creative Cloud</span>
+											</a>
+										</h4>
+									</div>
+									<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+										<div class="panel-body">
+											<p><span class="fa fa-desktop">Desktop</span></p>
+											<p><span class="fa fa-download">Downloads</span></p>
+											<p><span class="fa fa-file-text">documents</span></p>
+											<p><span class="fa fa-picture-o ">Picture</span></p>
+											<p><span class="fa fa-folder ">Folder</span></p>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading" role="tab" id="headingThree">
+										<h4 class="panel-title">
+											<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+												<span class="fa fa-desktop">我的電腦</span>
+											</a>
+										</h4>
+									</div>
+									<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+										<div class="panel-body">
+											<p><span class="fa fa-desktop">Desktop</span></p>
+											<p><span class="fa fa-download">Downloads</span></p>
+											<p><span class="fa fa-file-text">documents</span></p>
+											<p><span class="fa fa-picture-o ">Picture</span></p>
+											<p><span class="fa fa-folder ">Folder</span></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-9 ">
+							<div class="row main-folders">
+								<div class="col-xs-2 folders text-center" ondblclick="openSrc('https://github.com/WilliamChen0811')">
+									<p class="contain"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" class="img-responsive  center-block" alt=""></p>
+									<span>我的Github</span>
+								</div>
+								<div class="col-xs-2 folders text-center" ondblclick="openSrc('https://drive.google.com/file/d/1tYTME4ZfGKMAm4eHDVAQAhtrrBLGQqn7/view?usp=drive_link')">
+									<p class="contain"><img src="https://firebasestorage.googleapis.com/v0/b/myweb-fded4.appspot.com/o/Portfolio%2Fshark.png?alt=media&token=9d96736e-bf8b-4f43-87f4-a5e590d3144e" class="img-responsive  center-block" alt=""></p>
+									<span>鯊鯊勇者大冒險-視窗程式設計</span>
+								</div>
+								<div class="col-xs-2 folders text-center" ondblclick="openSrc('https://1drv.ms/p/s!AmxhorUnTNcOgusqlwa3NuzRb3koMA?e=GNfIN2')">
+									<p class="contain"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Microsoft_PowerPoint_2013-2019_logo.svg/2255px-Microsoft_PowerPoint_2013-2019_logo.svg.png" class="img-responsive  center-block" alt=""></p>
+									<span>鯊鯊勇者大冒險-視窗程式設計</span>
+								</div>
+								<div class="col-xs-2 folders text-center" ondblclick="openSrc('https://drive.google.com/file/d/14IxrhZ7n9hxtC5b_obruYq1sxyL5Vv0U/view?usp=drive_link')">
+									<p class="contain"><img src="https://firebasestorage.googleapis.com/v0/b/myweb-fded4.appspot.com/o/Portfolio%2FJOicon.png?alt=media&token=c72b7dbe-da2e-49cb-bbdd-7f7edfcd25e2" class="img-responsive  center-block" alt=""></p>
+									<span>JO是愛學習-物件導向程式設計</span>
+								</div>
+								<div class="col-xs-2 folders text-center" ondblclick="openSrc('https://1drv.ms/p/s!AmxhorUnTNcOguspbOuS9ViCLRhVeg?e=UvLIrA')">
+									<p class="contain"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Microsoft_PowerPoint_2013-2019_logo.svg/2255px-Microsoft_PowerPoint_2013-2019_logo.svg.png" class="img-responsive  center-block" alt=""></p>
+									<span>JO是愛學習-物件導向程式設計</span>
+								</div>
+								<div class="col-xs-2 folders text-center" ondblclick="openSrc('https://drive.google.com/file/d/1exaiMboVVrX88uM29t-zKdj7ECmEswgL/view?usp=drive_link')">
+									<p class="contain"><img src="https://firebasestorage.googleapis.com/v0/b/myweb-fded4.appspot.com/o/Portfolio%2FCyMisLogo.jpg?alt=media&token=33518538-d143-464a-9233-030af52d88ac" class="img-responsive  center-block" alt=""></p>
+									<span>CyMis 隨你聽-資料庫管理之系統開發</span>
+								</div>
+								<div class="col-xs-2 folders text-center" ondblclick="openSrc('https://1drv.ms/p/s!AmxhorUnTNcOgust5QAsNijI97OOIw?e=U2rrJW')">
+									<p class="contain"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Microsoft_PowerPoint_2013-2019_logo.svg/2255px-Microsoft_PowerPoint_2013-2019_logo.svg.png" class="img-responsive  center-block" alt=""></p>
+									<span>CyMis 隨你聽-資料庫管理之系統開發</span>
+								</div>
+								<div class="col-xs-2 folders text-center" ondblclick="openSrc('https://dalin-my-darlin.vercel.app/')">
+									<p class="contain"><img src="https://upload.wikimedia.org/wikipedia/zh/8/8e/Logo_of_Cittaslow_International.png" class="img-responsive  center-block" alt=""></p>
+									<span>慢城大林-網頁程式設計</span>
+								</div>
+								<div class="col-xs-2 folders text-center" ondblclick="openSrc('https://1drv.ms/p/s!AmxhorUnTNcOgusvbV86ZkCBq-CS0A?e=l7F1yO')">
+									<p class="contain"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Microsoft_PowerPoint_2013-2019_logo.svg/2255px-Microsoft_PowerPoint_2013-2019_logo.svg.png" class="img-responsive  center-block" alt=""></p>
+									<span>慢城大林-網頁程式設計</span>
+								</div>
+								<div class="col-xs-2 folders text-center" ondblclick="openSrc('https://drive.google.com/file/d/1uqA6FW3tlfp3huZHWc7kDwC1ObDfgorf/view?usp=drive_link')">
+									<p class="contain"><img src="https://firebasestorage.googleapis.com/v0/b/myweb-fded4.appspot.com/o/Portfolio%2FJOicon.png?alt=media&token=c72b7dbe-da2e-49cb-bbdd-7f7edfcd25e2" class="img-responsive  center-block" alt=""></p>
+									<span>JO是愛學習-智慧型手機程式設計</span>
+								</div>
+								<div class="col-xs-2 folders text-center" ondblclick="openSrc('https://1drv.ms/p/s!AmxhorUnTNcOgus1ZlXgd7JEWa9_BQ?e=5h1itD')">
+									<p class="contain"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Microsoft_PowerPoint_2013-2019_logo.svg/2255px-Microsoft_PowerPoint_2013-2019_logo.svg.png" class="img-responsive  center-block" alt=""></p>
+									<span>JO是愛學習-智慧型手機程式設計</span>
+								</div>
+								<div class="col-xs-2 folders text-center" ondblclick="openSrc('https://youtu.be/oXhRMm52g1A')">
+									<p class="contain"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/YouTube_social_white_square_%282017%29.svg/2048px-YouTube_social_white_square_%282017%29.svg.png" class="img-responsive  center-block" alt=""></p>
+									<span>銷售明星說謊沒關係?-管理學個案分析</span>
+								</div>
+								<div class="col-xs-2 folders text-center" ondblclick="openSrc('https://youtu.be/eGZPMeIN6EI')">
+									<p class="contain"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/YouTube_social_white_square_%282017%29.svg/2048px-YouTube_social_white_square_%282017%29.svg.png" class="img-responsive  center-block" alt=""></p>
+									<span>緯育-人力資源管理訪談</span>
+								</div>
+								<div class="col-xs-2 folders text-center" ondblclick="openSrc('https://youtu.be/s3ZADnIThTo')">
+									<p class="contain"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/YouTube_social_white_square_%282017%29.svg/2048px-YouTube_social_white_square_%282017%29.svg.png" class="img-responsive  center-block" alt=""></p>
+									<span>麥當勞-行銷管理分析</span>
+								</div>
+								<div class="col-xs-2 folders text-center" ondblclick="openSrc('https://1drv.ms/p/s!AmxhorUnTNcOgusn_pQBNKxkYPDAcw')">
+									<p class="contain"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Microsoft_PowerPoint_2013-2019_logo.svg/2255px-Microsoft_PowerPoint_2013-2019_logo.svg.png" class="img-responsive  center-block" alt=""></p>
+									<span>陶作坊-系統分析與設計</span>
+								</div>
+								<div class="col-xs-2 folders text-center" ondblclick="openSrc('https://youtu.be/blaGfaX5icc')">
+									<p class="contain"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/YouTube_social_white_square_%282017%29.svg/2048px-YouTube_social_white_square_%282017%29.svg.png" class="img-responsive  center-block" alt=""></p>
+									<span>陶作坊-系統分析與設計Demo</span>
+								</div>
+								<div class="col-xs-2 folders text-center" ondblclick="openSrc('https://1drv.ms/p/s!AmxhorUnTNcOgusxh4050C_HbcqY9w?e=jZCyyL')">
+									<p class="contain"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Microsoft_PowerPoint_2013-2019_logo.svg/2255px-Microsoft_PowerPoint_2013-2019_logo.svg.png" class="img-responsive  center-block" alt=""></p>
+									<span>作業系統-學科競賽</span>
+								</div>
+								<div class="col-xs-2 folders text-center" ondblclick="openSrc('https://youtu.be/zp6C6SGMDEo')">
+									<p class="contain"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/YouTube_social_white_square_%282017%29.svg/2048px-YouTube_social_white_square_%282017%29.svg.png" class="img-responsive  center-block" alt=""></p>
+									<span>作業系統-學科競賽Demo</span>
+								</div>
+								<div class="col-xs-2 folders text-center" ondblclick="openSrc('https://1drv.ms/p/s!AmxhorUnTNcOguszDaEAXanA7twrbQ?e=g7Cn0p')">
+									<p class="contain"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Microsoft_PowerPoint_2013-2019_logo.svg/2255px-Microsoft_PowerPoint_2013-2019_logo.svg.png" class="img-responsive  center-block" alt=""></p>
+									<span>MobSquad-電子商務個案分析</span>
+								</div>
+								<div class="col-xs-2 folders text-center" ondblclick="openimg('組合盆栽-生活與園藝', 'https://firebasestorage.googleapis.com/v0/b/myweb-fded4.appspot.com/o/Portfolio%2F%E7%B5%84%E5%90%88%E7%9B%86%E6%A0%BD%E6%88%90%E5%93%81.jpg?alt=media&token=9a82576d-fd53-4344-8c2c-c9e737fb4a9e')">
+									<p class="contain"><img src="https://firebasestorage.googleapis.com/v0/b/myweb-fded4.appspot.com/o/Portfolio%2F%E7%B5%84%E5%90%88%E7%9B%86%E6%A0%BD%E6%88%90%E5%93%81.jpg?alt=media&token=9a82576d-fd53-4344-8c2c-c9e737fb4a9e" class="img-responsive  center-block" alt=""></p>
+									<span>組合盆栽-生活與園藝</span>
+								</div>
+								<div class="col-xs-2 folders text-center" ondblclick="openSrc('https://drive.google.com/file/d/1isWcbq9QVtR8mYQhvnNrUWcilvXYp99l/view?usp=drive_link')">
+									<p class="contain"><img src="https://firebasestorage.googleapis.com/v0/b/myweb-fded4.appspot.com/o/Portfolio%2F9%C2%BE%E5%A4%A7%E9%81%93logo.png?alt=media&token=ffeae8e6-e763-4436-a3d1-b8918645cc0b" class="img-responsive  center-block" alt=""></p>
+									<span>畢業專題-9¾大道—不存在的商店街</span>
+								</div>
+								<div class="col-xs-2 folders text-center" ondblclick="openSrc('https://1drv.ms/p/s!AmxhorUnTNcOgus3voyUVTyunkV8wA?e=IuXF3I')">
+									<p class="contain"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Microsoft_PowerPoint_2013-2019_logo.svg/2255px-Microsoft_PowerPoint_2013-2019_logo.svg.png" class="img-responsive  center-block" alt=""></p>
+									<span>畢業專題-9¾大道—不存在的商店街</span>
+								</div>
+								<div class="col-xs-2 folders text-center" ondblclick="openimg('畢業專題-9¾大道—不存在的商店街', 'https://firebasestorage.googleapis.com/v0/b/myweb-fded4.appspot.com/o/Portfolio%2F%E7%AC%AC%E5%9B%9B%E7%B5%84_9%C2%BE%E5%A4%A7%E9%81%93%E2%80%94%E4%B8%8D%E5%AD%98%E5%9C%A8%E7%9A%84%E5%95%86%E5%BA%97%E8%A1%97_%E6%B5%B7%E5%A0%B1-1.png?alt=media&token=370bfbe9-476c-4330-a4bc-b8a109e4d6bc')">
+									<p class="contain"><img src="https://firebasestorage.googleapis.com/v0/b/myweb-fded4.appspot.com/o/Portfolio%2F%E7%AC%AC%E5%9B%9B%E7%B5%84_9%C2%BE%E5%A4%A7%E9%81%93%E2%80%94%E4%B8%8D%E5%AD%98%E5%9C%A8%E7%9A%84%E5%95%86%E5%BA%97%E8%A1%97_%E6%B5%B7%E5%A0%B1-1.png?alt=media&token=370bfbe9-476c-4330-a4bc-b8a109e4d6bc" class="img-responsive  center-block" alt=""></p>
+									<span>畢業專題-9¾大道—不存在的商店街</span>
+								</div>
+								<div class="col-xs-2 folders text-center" ondblclick="openSrc('https://1drv.ms/p/s!AmxhorUnTNcOgus5PTLFat5zM85-cg?e=ZiSfga')">
+									<p class="contain"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Microsoft_PowerPoint_2013-2019_logo.svg/2255px-Microsoft_PowerPoint_2013-2019_logo.svg.png" class="img-responsive  center-block" alt=""></p>
+									<span>使魔夥伴-校外 LINE Chatbot 設計大賽</span>
+								</div>
+								<div class="col-xs-2 folders text-center" ondblclick="openSrc('https://youtu.be/zyFtuFugcq8')">
+									<p class="contain"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/YouTube_social_white_square_%282017%29.svg/2048px-YouTube_social_white_square_%282017%29.svg.png" class="img-responsive  center-block" alt=""></p>
+									<span>使魔夥伴-校外 LINE Chatbot 設計大賽</span>
+								</div>
+								<div class="col-xs-2 folders text-center" ondblclick="opennote()">
+									<p class="contain"><img src="https://mohamedelghandour.github.io/windows-10/img/if_sticky-note_299111.png" class="img-responsive  center-block" alt=""></p>
+									<span>Note</span>
+								</div>
+								<div class="col-xs-2 folders text-center">
+									<p class="contain"><img src="https://mohamedelghandour.github.io/windows-10/img/if_folder-blue_285658.svg" class="img-responsive  center-block" style="height: 64px;" alt=""></p>
+									<span>Folder</span>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+					</div>
+					<div class="fived-row-win"></div>
+				</div>
+				<div class="resizer"></div>
+			</div>
+			<div class="clearfix"></div>
+			<div class="image-overlay" id="image-overlay">
+				<div class="fluid-container">
+					<div class="first-row-img">
+						<span id="img-name" class="center-text head-over"></span>
+						<div class="right">
+							<i class="fa fa-times" onclick="closeimg()"></i>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="second-row-img">
+						<img id="img-src" src="" class="center-block img-responsive" style="height:80vh" alt="">
+					</div>
+				</div>
+			</div>
 
-    <body>
+			<div class="note-overlay" id="note-overlay">
+				<div class="fluid-container">
+					<div class="first-row-note">
+						<span class="center-text head-over">My Note</span>
+						<div class="right">
+							<i class="fa fa-times" onclick="closenote()"></i>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="second-row-note">
+						<textarea></textarea>
+					</div>
+				</div>
+			</div>
 
-    </body>
+			<div class="start-window-fade hidden-start" id="start-window-fade"></div>
+			<div class="start-window hidden-start" id="start-window">
+				<div class="fluid-container" id="container-start">
+					<div class="row">
+						<div class="col-xs-1 first-column">
+							<div class="icon-bottom" id="power" onclick="powerOff()">
+								<i class="fa fa-power-off fa-1x"></i>
+							</div>
+							<div class="icon-bottom">
+								<i class="fa fa-cog fa-1x"></i>
+							</div>
+							<div class="icon-bottom">
+								<i class="fa fa-folder-open-o fa-1x"></i>
+							</div>
+							<div class="icon-bottom">
+								<i class="fa fa-user fa-1x"></i>
+							</div>
+							<div class="icon-bottom open-icon-list">
+								<i class="fa fa-bars fa-1x"></i>
+							</div>
+						</div>
+						<div class="col-xs-3 second-column">
+							<div class="wrap-scroll">
+								<div class="head-med">
+									<small>What I'am Used</small>
+								</div>
+							<div class="media">
+								<div class="media-left">
+									<a href="#">
+										<img class="media-object" src="https://mohamedelghandour.github.io/windows-10/img/HTML_Logo.png" width="35" height="35" alt="...">
+									</a>
+								</div>
+								<div class="media-body">
+									<small class="media-heading">Html, Html 5</small>
+								</div>
+							</div>
+							<div class="media">
+								<div class="media-left">
+									<a href="#">
+										<img class="media-object" src="https://mohamedelghandour.github.io/windows-10/img/8b61de4c84033266e15317a6eb9fda2d-css3.png" width="35" height="35" alt="...">
+									</a>
+								</div>
+								<div class="media-body">
+									<small class="media-heading">Css, Css 3</small>
+								</div>
+							</div>
+							<div class="media">
+								<div class="media-left">
+									<a href="#">
+										<img class="media-object" src="https://mohamedelghandour.github.io/windows-10/img/Javascript-shield.png" width="35" height="35" alt="...">
+									</a>
+								</div>
+								<div class="media-body">
+									<small class="media-heading">Pure JavaScript</small>
+								</div>
+							</div>
+							<div class="media">
+								<div class="media-left">
+									<a href="#">
+										<img class="media-object" src="https://mohamedelghandour.github.io/windows-10/img/bootstrap-4.svg" width="35" height="35" alt="...">
+									</a>
+								</div>
+								<div class="media-body">
+									<small class="media-heading">Bootstrap</small>
+								</div>
+							</div>
+							<div class="head-med mouse-prient">
+								<small>Expand <i class="fa fa-chevron-down fa-1x"></i></small>
+							</div>
+							<div class="head-med">
+								<small>Tools used</small>
+							</div>
+							<div class="media">
+								<div class="media-left">
+									<a href="#">
+										<img class="media-object" src="https://mohamedelghandour.github.io/windows-10/img/winicon.png" width="35" height="35" alt="...">
+									</a>
+								</div>
+								<div class="media-body">
+									<small class="media-heading">Windows 10</small>
+								</div>
+							</div>
+							<div class="media">
+								<div class="media-left">
+									<a href="#">
+										<img class="media-object" src="https://mohamedelghandour.github.io/windows-10/img/Firefox.png" width="35" height="35" alt="...">
+									</a>
+								</div>
+								<div class="media-body">
+									<small class="media-heading">Firefox</small>
+								</div>
+							</div>
+							<div class="media">
+								<div class="media-left">
+									<a href="#">
+										<img class="media-object" src="https://mohamedelghandour.github.io/windows-10/img/chrome1600.png" width="35" height="35" alt="...">
+									</a>
+								</div>
+								<div class="media-body">
+									<small class="media-heading">chrome</small>
+								</div>
+							</div>
+							<div class="media">
+								<div class="media-left">
+									<a href="#">
+										<img class="media-object" src="https://mohamedelghandour.github.io/windows-10/img/favicon.ico" width="35" height="35" alt="...">
+									</a>
+								</div>
+								<div class="media-body">
+									<small class="media-heading">Visual Studio Code</small>
+								</div>
+							</div>
+							<div class="media">
+								<div class="media-left">
+									<a href="#">
+										<img class="media-object" src="https://mohamedelghandour.github.io/windows-10/img/Photoshop_CC_icon.png" width="35" height="35" alt="...">
+									</a>
+								</div>
+								<div class="media-body">
+									<small class="media-heading">Photoshop cc 2017</small>
+								</div>
+							</div>
+							<div class="media">
+								<div class="media-left">
+									<a href="#">
+										<img class="media-object" src="https://mohamedelghandour.github.io/windows-10/img/illustrator.png" width="35" height="35" alt="...">
+									</a>
+								</div>
+								<div class="media-body">
+									<small class="media-heading">illustrator cc 2017</small>
+								</div>
+							</div>
+							<div class="media">
+								<div class="media-left">
+									<a href="#">
+										<img class="media-object" src="https://mohamedelghandour.github.io/windows-10/img/github-desktop-icon.png" width="35" height="35" alt="...">
+									</a>
+								</div>
+								<div class="media-body">
+									<small class="media-heading">github</small>
+								</div>
+							</div>
+							<div class="media">
+								<div class="media-left">
+									<a href="#">
+										<img class="media-object" src="https://mohamedelghandour.github.io/windows-10/img/codepen1600.png" width="35" height="35" alt="...">
+									</a>
+								</div>
+								<div class="media-body">
+									<small class="media-heading">Codepen</small>
+								</div>
+							</div>
+							<div class="media">
+								<div class="media-left">
+									<a href="#">
+										<img class="media-object" src="https://mohamedelghandour.github.io/windows-10/img/photo.jpg" width="35" height="35" alt="...">
+									</a>
+								</div>
+								<div class="media-body">
+									<small class="media-heading">Upwork</small>
+								</div>
+							</div>
+
+
+
+							</div>
+						</div>
+						<div class="col-xs-4 third-column">
+							<div class="head-box">
+								<small>Life at a glance</small>
+							</div>
+							<div class="row">
+								<div class="col-xs-8 col-xs-push-4 box">
+									<div class="box-style">
+										<div class="icon-bottom text-center" style="margin: 20px;">
+											<i class="fa fa-envelope fa-2x"></i>
+										</div>
+										<div>
+											Mail
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-4 col-xs-pull-8 box">
+									<div class="box-style text-center">
+										<div class="mycontainer">
+											<div id="day">day</div>
+											<div id="number-day">number</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-8 box">
+									<div class="box-style">
+										<div class="icon-bottom text-center" style="margin: 20px;">
+											<i class="fa fa-internet-explorer fa-2x"></i>
+										</div>
+										<div>
+											Microsoft Edge
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-4 box">
+									<div class="box-style">
+										<div class="icon-bottom text-center" style="margin: 20px;">
+											<i class="fa fa-picture-o fa-2x"></i>
+										</div>
+										<div>
+											Picture
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-4 box">
+									<div class="box-style">
+										<div class="icon-bottom text-center" style="margin: 20px;">
+											<i class="fa fa-sun-o fa-2x"></i>
+										</div>
+										<div>
+											Weather
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-4 box">
+									<div class="box-style">
+										<div class="icon-bottom text-center" style="margin: 20px;">
+											<i class="fa fa-laptop fa-2x"></i>
+										</div>
+										<div>
+											User
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-4 box">
+									<div class="box-style" style="background:url('https://firebasestorage.googleapis.com/v0/b/myweb-fded4.appspot.com/o/Portfolio%2Fmy_life_photo.JPG?alt=media&token=9716e077-7e02-4f68-adf4-380bf7ee7073');background-size: cover;    background-repeat: no-repeat;
+										background-position: 39%;">
+										<div class="icon-bottom text-center" style="margin: 20px;">
+											<i class="fa fa-twitter fa-2x" style="color: rgba(0,0,0,0);"></i>
+										</div>
+										<div>
+											twitter <i class="fa fa-twitter" style="float: right;line-height: 21px;"></i>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-4 box">
+									<div class="box-style">
+										<div class="icon-bottom text-center" style="margin: 20px;">
+											<i class="fa fa-shopping-bag  fa-2x"></i>
+										</div>
+										<div>
+											store
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-4 box">
+									<div class="box-style">
+										<div class="icon-bottom text-center" style="margin: 20px;">
+											<i class="fa fa-skype  fa-2x"></i>
+										</div>
+										<div>
+											skype
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-4 box">
+									<div class="box-style text-center" style="background:url('https://mohamedelghandour.github.io/windows-10/img/king-care.jpg');background-size: cover;background-position: center;">
+										<div class="icon-bottom text-center" style="margin: 20px;">
+											<i class="fa fa-twitter fa-2x" style="color: rgba(0,0,0,0);"></i>
+										</div>
+										<div style="font-size: 10px;">
+											Candy Crush
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-4">
+							<div class="head-box">
+								<small>Play And Explore</small>
+							</div>
+							<div class="row">
+								<div class="col-xs-4 box">
+									<div class="box-style" style="background:url('https://mohamedelghandour.github.io/windows-10/img/logo.PNG');background-size: cover;background-position: center;">
+										<div class="icon-bottom text-center" style="margin: 20px;">
+											<i class="fa fa-twitter fa-2x" style="color: rgba(0,0,0,0);"></i>
+										</div>
+										<div style="font-size: 10px;">
+											Xbox
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-4 box">
+									<div class="box-style">
+										<div class="icon-bottom text-center" style="margin: 20px;">
+											<i class="fa fa-music fa-2x"></i>
+										</div>
+										<div style="font-size: 10px;">
+											Music
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-4 box">
+									<div class="box-style">
+										<div class="icon-bottom text-center" style="margin: 20px;">
+											<i class="fa fa-film fa-2x"></i>
+										</div>
+										<div style="font-size: 10px;">
+											Film
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-4 box">
+									<div class="box-style" style="background:url('https://mohamedelghandour.github.io/windows-10/img/microsoft-solitaire-collection-02-535x535.png');background-size: cover;background-position: center;">
+										<div class="icon-bottom text-center" style="margin: 20px;">
+											<i class="fa fa-twitter fa-2x" style="color: rgba(0,0,0,0);"></i>
+										</div>
+										<div style="font-size: 10px;">
+
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-4 box">
+									<div class="box-style" style="background:url('https://mohamedelghandour.github.io/windows-10/img/1200x630bb.jpg');background-size: cover;background-position: center;">
+										<div class="icon-bottom text-center" style="margin: 20px;">
+											<i class="fa fa-twitter fa-2x" style="color: rgba(0,0,0,0);"></i>
+										</div>
+										<div style="font-size: 10px;">
+											minecraft
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-4 box">
+									<div class="box-style" style="background:url('https://mohamedelghandour.github.io/windows-10/img/shortcut-icon-180-393c2144.png');background-size: cover;background-position: center;">
+										<div class="icon-bottom text-center" style="margin: 20px;">
+											<i class="fa fa-twitter fa-2x" style="color: rgba(0,0,0,0);"></i>
+										</div>
+										<div style="font-size: 10px;">
+
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-8 col-xs-push-4 box">
+									<div class="box-style" style="background:url('https://mohamedelghandour.github.io/windows-10/img/bank.jpg');background-size: 130%;background-position: center;">
+										<div class="icon-bottom text-center" style="margin: 20px;">
+											<i class="fa fa-twitter fa-2x" style="color: rgba(0,0,0,0);"></i>
+										</div>
+										<div>
+											News
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-4 col-xs-pull-8 box">
+									<div class="box-style" style="background:url('https://mohamedelghandour.github.io/windows-10/img/maxresdefault_live.jpg');background-size: cover;background-position: center;">
+										<div class="icon-bottom text-center" style="margin: 20px;">
+											<i class="fa fa-twitter fa-2x" style="color: rgba(0,0,0,0);"></i>
+										</div>
+										<div>
+											Money
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-4 box">
+									<div class="box-style" style="background:url('https://mohamedelghandour.github.io/windows-10/img/unnamed.png');background-size: cover;background-position: center;">
+										<div class="icon-bottom text-center" style="margin: 20px;">
+											<i class="fa fa-twitter fa-2x" style="color: rgba(0,0,0,0);"></i>
+										</div>
+										<div style="font-size: 10px;">
+
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-4 box">
+									<div class="box-style" style="background:url('https://mohamedelghandour.github.io/windows-10/img/onenote-amazon-app-store-100361701-large.jpg');background-size: cover;background-position: center;">
+										<div class="icon-bottom text-center" style="margin: 20px;">
+											<i class="fa fa-twitter fa-2x" style="color: rgba(0,0,0,0);"></i>
+										</div>
+										<div style="font-size:12px;">
+											OneNote
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-4 box">
+									<div class="box-style" style="background:url('https://mohamedelghandour.github.io/windows-10/img/office2016logo.png');background-size: cover;background-position: center;">
+										<div class="icon-bottom text-center" style="margin: 20px;">
+											<i class="fa fa-twitter fa-2x" style="color: rgba(0,0,0,0);"></i>
+										</div>
+										<div style="font-size:10px;">
+											Office
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer class="nav navbar-inverse navbar-fixed-bottom footer text-center">
+				<div class="fluid-container">
+					<div class="row">
+						<div class="left">
+							<div class="col-xs-1-me">
+								<div class="icon-bottom strat-win" id="strat-win">
+									<i class="fa fa-windows fa-2x"></i>
+								</div>
+							</div>
+							<div class="col-xs-1-me">
+								<div class="icon-bottom">
+									<i class="fa fa-search fa-2x"></i>
+								</div>
+							</div>
+							<div class="col-xs-1-me">
+								<div class="icon-bottom">
+									<i class="fa fa-envelope fa-2x"></i>
+								</div>
+							</div>
+							<div class="col-xs-1-me" id="a1">
+								<div class="icon-bottom">
+									<i class="fa fa-folder fa-2x"></i>
+								</div>
+							</div>
+							<div class="col-xs-1-me" id="a2">
+								<div class="icon-bottom">
+									<i class="fa fa-picture-o fa-2x"></i>
+								</div>
+							</div>
+							<div class="col-xs-1-me" id="a3">
+								<div class="icon-bottom">
+									<i class="fa fa-film fa-2x"></i>
+								</div>
+							</div>
+							<div class="col-xs-1-me" id="a4">
+								<div class="icon-bottom">
+									<i class="fa fa-file-text-o fa-2x"></i>
+								</div>
+							</div>
+							<div class="col-xs-1-me" id="a5">
+								<div class="icon-bottom">
+									<i class="fa fa-id-card fa-2x"></i>
+								</div>
+							</div>
+							<span class=".clearfix"></span>
+						</div>
+						<div class="right">
+							<div class="col-xs-1-me" id="close-all">
+							</div>
+							<div class="col-xs-1-me">
+								<div class="icon-bottom">
+									<i class="fa fa-bell fa-2x"></i>
+								</div>
+							</div>
+							<div class="date col-xs-1-me">
+								<span id="time">00:00</span>
+								<span id="history">00/00/0000</span>
+							</div>
+							<div class="col-xs-1-me">
+								<div class="icon-bottom">
+									<i class="fa fa-volume-up  fa-2x"></i>
+								</div>
+							</div>
+							<div class="col-xs-1-me">
+								<div class="icon-bottom">
+									<i class="fa fa-chevron-up fa-2x"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+	<script  src="script/PortfolioJS.js"></script>
 </html>

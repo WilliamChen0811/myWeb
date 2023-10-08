@@ -108,6 +108,7 @@ getDocs(query(certificateCollection, orderBy("date", "asc"))).then((querySnapsho
       currentIndex-=6;
 	  clearShelfFlexElements();
       updateDisplay();
+	  imageProcess();
     }
   });
 
@@ -116,6 +117,7 @@ getDocs(query(certificateCollection, orderBy("date", "asc"))).then((querySnapsho
       currentIndex+=6;
 	  clearShelfFlexElements();
       updateDisplay();
+	  imageProcess();
     }
   });
 
@@ -164,5 +166,27 @@ getDocs(query(certificateCollection, orderBy("date", "asc"))).then((querySnapsho
         shelfFlex.removeChild(shelfFlex.firstChild);
 	  }
     });
+  }
+  
+  function imageProcess() {
+	const images = document.querySelectorAll('img');
+	const overlay = document.getElementById('overlay');
+	const overlayImage = document.getElementById('overlay-image');
+	const closeButton = document.getElementById('close-button');
+	const nameElement = document.getElementById('name');
+
+	images.forEach((img) => {
+	  img.addEventListener('click', function () {
+		const imageSrc = this.src;
+		const data = querySnapshot.docs.find(doc => doc.data().image === imageSrc).data(); 
+		nameElement.textContent = data.name;
+		overlay.style.display = 'block';
+		overlayImage.src = this.src;
+	  });
+	});
+
+	closeButton.addEventListener('click', function () {
+	  overlay.style.display = 'none';
+	});
   }
 });
