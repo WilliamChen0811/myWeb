@@ -23,3 +23,7 @@ function move(id, position, color) {
     var textDivId = "td" + id;
     document.getElementById(textDivId).style.display = "block";
 }
+
+function showPrompt() {
+    alert("才不告訴你哩😝");
+}
